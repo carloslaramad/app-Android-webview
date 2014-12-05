@@ -1,0 +1,31 @@
+package com.entradascom;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class Splash extends Activity {
+	
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		 
+        	this.setContentView(R.layout.activity_splash);
+
+		lanzarThread();
+	}
+	
+	private void lanzarThread(){
+		Thread timer = new Thread(){
+			public void run(){
+				try{
+					sleep(2000)
+				}catch(InterruptedException e){
+					e.printStackTrace();
+				}
+			}
+		}
+		timer.start();
+	}
+
+}
+
